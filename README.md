@@ -1,6 +1,10 @@
 # Variant Predictor
 
-A command-line tool for predicting functional variants using a pre-trained multi-modal deep learning model built on [IntegrAO](https://github.com/bowang-lab/IntegrAO). Given a list of dbSNP rs IDs, the tool extracts four types of genomic features and returns ensemble predictions across 5 cross-validation folds.
+A command-line tool for predicting the transcriptional regulatory activity of genetic variants. 
+The model is trained on large-scale MPRA (Massively Parallel Reporter Assay) data using a 
+pre-trained multi-modal deep learning framework built on IntegrAO 
+(https://github.com/bowang-lab/IntegrAO). Given a list of dbSNP rs IDs, the tool extracts 
+four types of genomic features and returns ensemble predictions across 5 cross-validation folds.
 
 ---
 
