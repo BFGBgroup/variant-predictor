@@ -57,6 +57,14 @@ After installation, update the path variables at the top of predict_variants.py:
 
 ---
 
+## Download Feature Database
+
+The pre-processed feature database (~5.3 GB) is available on Zenodo:
+
+https://doi.org/10.5281/zenodo.19447280
+
+Download all four files and place them in the same directory (your feature_db/).
+
 ## Step 1 - Prepare the Feature Database (once only)
 
     python prepare_database.py \
