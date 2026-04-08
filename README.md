@@ -46,7 +46,10 @@ pip install -r requirements.txt
 # 4. Install IntegrAO
 git clone https://github.com/bowang-lab/IntegrAO.git IntegrAO
 cd IntegrAO && pip install -e . && cd ..
-Feature Database
+
+---
+
+## Feature Database
 
 Download the feature database (~5.3 GB) from Zenodo:
 
@@ -60,7 +63,10 @@ variant-predictor/
 │   ├── favor_dbsnp_features_common.tsv
 │   ├── dbsnp_features_count_common.tsv
 │   └── dbsnp_features_dist_common.tsv
-Models
+
+---
+
+## Prepare Models
 
 Put the 5 trained model files in the models/ directory:
 
@@ -71,7 +77,10 @@ variant-predictor/
 │   ├── model_fold3.pth
 │   ├── model_fold4.pth
 │   └── model_fold5.pth
-Run Predictions
+
+---
+
+## Run Predictions
 
 Input format - one rs ID per line:
 
@@ -84,7 +93,10 @@ Run the script:
 python predict_variants.py example/example_variants.txt [output_dir]
 If [output_dir] is omitted, results are saved in the same directory as the input file.
 The script automatically detects feature_db/ and models/ directories.
-Output
+
+---
+
+## Output
 
 Results are saved to prediction_results.tsv:
 
@@ -93,7 +105,11 @@ Variant	rs ID
 probs_mean	Mean P(functional) across 5 folds (0-1)
 preds_final	Final label: 1 = functional, 0 = non-functional
 preds_vote	Number of folds predicting class 1 (0-5)
-Reference
+
+---
+
+## Reference
+
 IntegrAO: https://github.com/bowang-lab/IntegrAO
 Enformer: Avsec et al., Nature Methods, 2021
 FAVOR: Zhou et al., Nature Genetics, 2022
