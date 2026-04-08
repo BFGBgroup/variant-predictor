@@ -31,7 +31,7 @@ Four feature modalities:
 
 ## Installation
 
-```bash
+
 # 1. Clone this repository
 git clone https://github.com/BFGBgroup/variant-predictor.git
 cd variant-predictor
