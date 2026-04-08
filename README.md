@@ -65,9 +65,6 @@ feature_db/
 ├── dbsnp_features_count_common.tsv
 └── dbsnp_features_dist_common.tsv
 ```
-
-> Note: These files are already processed, so the previous "Step 1" is not required.
-
 ---
 
 ## Models
