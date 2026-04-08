@@ -1,9 +1,8 @@
-```
 # Variant Predictor
 
 A command-line tool for predicting the transcriptional regulatory activity of genetic variants.  
 The model is trained on large-scale MPRA (Massively Parallel Reporter Assay) data using a 
-pre-trained multi-modal deep learning framework built on IntegrAO (https://github.com/bowang-lab/IntegrAO).  
+pre-trained multi-modal deep learning framework built on [IntegrAO](https://github.com/bowang-lab/IntegrAO).  
 
 Given a list of dbSNP rs IDs, the tool extracts four types of genomic features and returns ensemble predictions across 5 cross-validation folds.
 
@@ -25,13 +24,14 @@ Four feature modalities:
 ## Requirements
 
 - Python >= 3.8  
-- IntegrAO installed (https://github.com/bowang-lab/IntegrAO)  
+- IntegrAO installed ([IntegrAO GitHub](https://github.com/bowang-lab/IntegrAO))  
 - CUDA-capable GPU recommended (CPU inference supported but slower)  
 
 ---
 
 ## Installation
 
+```bash
 # 1. Clone this repository
 git clone https://github.com/BFGBgroup/variant-predictor.git
 cd variant-predictor
@@ -46,23 +46,27 @@ pip install -r requirements.txt
 # 4. Install IntegrAO
 git clone https://github.com/bowang-lab/IntegrAO.git IntegrAO
 cd IntegrAO && pip install -e . && cd ..
+```
 
 ---
 
 ## Feature Database
 
-Download the feature database (~5.3 GB) from Zenodo:
+The pre-processed feature database (~5.3 GB) is available on Zenodo:
 
-https://doi.org/10.5281/zenodo.19447280
+[https://doi.org/10.5281/zenodo.19447280](https://doi.org/10.5281/zenodo.19447280)
 
 Place all four files in the `feature_db/` directory:
 
-variant-predictor/
-├── feature_db/
-│   ├── enformer_dbsnp_intersect_common.tsv
-│   ├── favor_dbsnp_features_common.tsv
-│   ├── dbsnp_features_count_common.tsv
-│   └── dbsnp_features_dist_common.tsv
+```text
+feature_db/
+├── enformer_dbsnp_intersect_common.tsv
+├── favor_dbsnp_features_common.tsv
+├── dbsnp_features_count_common.tsv
+└── dbsnp_features_dist_common.tsv
+```
+
+> Note: These files are already processed, so the previous "Step 1" is not required.
 
 ---
 
@@ -70,13 +74,14 @@ variant-predictor/
 
 Put the 5 trained model files in the `models/` directory:
 
-variant-predictor/
-├── models/
-│   ├── model_fold1.pth
-│   ├── model_fold2.pth
-│   ├── model_fold3.pth
-│   ├── model_fold4.pth
-│   └── model_fold5.pth
+```text
+models/
+├── model_fold1.pth
+├── model_fold2.pth
+├── model_fold3.pth
+├── model_fold4.pth
+└── model_fold5.pth
+```
 
 ---
 
@@ -84,16 +89,21 @@ variant-predictor/
 
 Input format: one rs ID per line:
 
+```text
 rs367896724
 rs555500075
 rs376342519
+```
 
 Run the script:
 
-python predict_variants.py example/example_variants.txt [output_dir]
+```bash
+# Output saved to same directory as input file
+python predict_variants.py example/example_variants.txt
 
-- If `[output_dir]` is omitted, results are saved in the same directory as the input file.  
-- The script automatically detects `feature_db/` and `models/` directories.  
+# Or specify output directory
+python predict_variants.py example/example_variants.txt /path/to/results/
+```
 
 ---
 
@@ -115,4 +125,3 @@ Results are saved to `prediction_results.tsv`:
 - IntegrAO: https://github.com/bowang-lab/IntegrAO  
 - Enformer: Avsec et al., Nature Methods, 2021  
 - FAVOR: Zhou et al., Nature Genetics, 2022
-```
