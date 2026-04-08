@@ -59,6 +59,14 @@ The pre-processed feature database (~5.3 GB) is available on Zenodo:
 Place all four files in the `feature_db/` directory:
 
 ```text
+
+mkdir feature_db && cd feature_db
+wget https://zenodo.org/records/19447280/files/dbsnp_features_count_common.tsv?download=1
+wget https://zenodo.org/records/19447280/files/dbsnp_features_dist_common.tsv?download=1
+wget https://zenodo.org/records/19447280/files/enformer_dbsnp_intersect_common.tsv?download=1
+wget https://zenodo.org/records/19447280/files/favor_dbsnp_features_common.tsv?download=1
+cd ..
+
 feature_db/
 ├── enformer_dbsnp_intersect_common.tsv
 ├── favor_dbsnp_features_common.tsv
