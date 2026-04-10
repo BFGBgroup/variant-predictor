@@ -126,14 +126,12 @@ Results are saved to `prediction_results.tsv`:
 | Column      | Description |
 |-------------|-------------|
 | Variant     | rs ID |
-| probs_mean  | Mean P(functional) across 5 folds (0-1) |
-| preds_final | Final label: 1 = functional, 0 = non-functional |
 | preds_vote  | Number of folds predicting class 1 (0-5) |
 
 ---
 
 ## Reference
 
-- IntegrAO: https://github.com/bowang-lab/IntegrAO  
+- IntegrAO: Ma et al., Nature Machine Intelligence, 2025 
 - Enformer: Avsec et al., Nature Methods, 2021  
 - FAVOR: Zhou et al., Nature Genetics, 2022
