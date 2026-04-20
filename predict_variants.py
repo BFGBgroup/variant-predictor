@@ -104,7 +104,7 @@ for model_path in MODEL_PATHS:
     preds_all.append(preds)
 
 preds_stack = np.stack(preds_all, axis=0)  # shape: (5, num_variants)
-preds_vote = np.sum(preds_stack, axis=0) 
+preds_vote = 5 - np.sum(preds_stack, axis=0) 
 
 # ─────────────────────────────────────────
 # Save results
